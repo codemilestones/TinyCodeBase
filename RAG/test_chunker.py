@@ -7,7 +7,7 @@
 @Time    :   2025/06/18 10:00:00
 @Author  :   codemilestones
 @Version :   1.0
-@Desc    :   Test the chunker pipeline
+@Desc    :   Test the chunker pipeline, you could test the codebase with https://github.com/datawhalechina/tiny-universe/
 '''
 
 from chunker_code import split_to_segmenmt

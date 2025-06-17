@@ -29,7 +29,7 @@ class ReadFiles:
     """
 
     def __init__(self, path: str) -> None:
-        self._path = path
+        self._path = os.path.expanduser(path)
         self.file_list = self.get_files()
 
     def get_files(self):

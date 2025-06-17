@@ -14,7 +14,7 @@ from chunker_code import split_to_segmenmt
 from chunker_text import ReadFiles
 
 if __name__ == "__main__":
-    code_docs = split_to_segmenmt("/Users/lizhe/SEO/workspace/codev-backend", cover_content=150)
+    code_docs = split_to_segmenmt("~/workspace/tiny-universe", cover_content=150)
 
     for doc in code_docs[:10]:
         print(doc.path, "\n")
@@ -22,8 +22,8 @@ if __name__ == "__main__":
         print(doc.content, "\n")
         print("-"*100)
 
-    docs = ReadFiles('/Users/lizhe/SEO/workspace/codev-backend').get_content(max_token_len=600, cover_content=150)
+    docs = ReadFiles('~/workspace/tiny-universe').get_content(max_token_len=600, cover_content=150)
 
-    for doc in docs:
+    for doc in docs[:10]:
         print(doc, "\n")
         print("-"*100)

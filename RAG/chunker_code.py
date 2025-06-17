@@ -172,8 +172,8 @@ class Documents:
         self.index = index
         self.content = content
 
-def split_to_segmenmt(project_name: str, max_chars: int = 512 * 5, cover_content: int = 150) -> list[Documents]:
-    suffix = ("java", "html", "css", "js", "vue", "ts", "jsx", "tsx", "swift", "kt", "vue")
+def split_to_segmenmt(project_path: str, max_chars: int = 512 * 5, cover_content: int = 150) -> list[Documents]:
+    suffix = ("java", "html", "css", "js", "vue", "ts", "jsx", "tsx", "swift", "kt", "vue", "py")
 
     documents = []
 
@@ -186,17 +186,16 @@ def split_to_segmenmt(project_name: str, max_chars: int = 512 * 5, cover_content
         "tsx": "tsx",
         "kt": "kotlin",
         "vue": "typescript",
+        "py": "python",
     }
     parse_map = {}
     for i in suffix_map.values():
         parse_map[i] = get_parser(i)
-    for root, dirs, files in os.walk(project_name):
+    for root, dirs, files in os.walk(os.path.expanduser(project_path)):
         for file in files:
             suf = file.split('.')[-1]
             if suf in suffix:
                 with open(os.path.join(root, file), "r", encoding="utf-8") as f:
-                    # new_root = root.replace(project_name, 'segment/' + project_name, 1)
-                    # mkdir(new_root)
                     content = f.read()
                     if is_thrift(content):
                         continue

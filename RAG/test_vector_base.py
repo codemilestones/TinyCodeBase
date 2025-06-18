@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+'''
+@File    :   test_vector_base.py
+@Time    :   2025/06/18 10:00:00
+@Author  :   codemilestones
+@Version :   1.0
+@Desc    :   Test the vector base pipeline
+'''
+
 from vector_base import VectorStore
 from embeddings import OpenAIEmbedding
 from chunker_code import split_to_segmenmt

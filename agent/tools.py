@@ -60,7 +60,7 @@ class Tools:
 
         payload = json.dumps({"q": search_query})
         headers = {
-            'X-API-KEY': '4c6e90b1d8092ba79cbb85bee45ec17693976a58',
+            'X-API-KEY': 'xxxxxx',
             'Content-Type': 'application/json'
         }
 
